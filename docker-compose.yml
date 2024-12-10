@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  streamlit-app:
+    image: streamlit-system-monitor:latest # Imaginea construită
+    build:
+      context: . # Directorul curent
+      dockerfile: Dockerfile
+    ports:
+      - "8503:8501" # Maparea portului Streamlit
+    restart: unless-stopped
+    container_name: streamlit-system-monitor
